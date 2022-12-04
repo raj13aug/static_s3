@@ -1,5 +1,9 @@
 resource "aws_s3_bucket" "static" {
   bucket = var.bucketName
+  website {
+    index_document = "index.html"
+    error_document = "404.html"
+  }
 }
 
 
