@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "cloudroot-007"
-    key    = "s3/static"
+    bucket = "cloudroot-backend"
+    key    = "static"
     region = "us-east-1"
   }
 }
