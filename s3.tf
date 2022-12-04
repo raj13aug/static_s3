@@ -1,10 +1,5 @@
 resource "aws_s3_bucket" "example" {
   bucket = var.bucketName
-  acl    = "public-read"
-  website {
-    index_document = "index.html"
-    #error_document = "404.html"
-  }
 }
 
 resource "aws_s3_bucket_website_configuration" "example-config" {
