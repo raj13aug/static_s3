@@ -22,6 +22,6 @@ resource "aws_s3_bucket_policy" "example-policy" {
 resource "aws_s3_object" "example-index" {
   bucket = aws_s3_bucket.example.id
   key    = "index.html"
-  source = "../index.html"
+  source = "index.html"
   acl    = "public-read"
 }
