@@ -1,4 +1,9 @@
 variable "bucketName" {
-  default = "cloudroot-007"
+  default = "robofarming.link"
+  type    = string
+}
+
+variable "domainName" {
+  default = "robofarming.link"
   type    = string
 }

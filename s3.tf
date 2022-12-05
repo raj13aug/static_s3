@@ -20,3 +20,19 @@ resource "aws_s3_object" "object-index" {
   acl          = "public-read"
   content_type = "text/html"
 }
+
+
+data "aws_route53_zone" "selected" {
+  name = "robofarming.link"
+}
+
+resource "aws_route53_record" "exampleDomain-a" {
+  zone_id = data.aws_route53_zone.selected.zone_id
+  name    = var.domainName
+  type    = "A"
+  alias {
+    name                   = aws_s3_bucket.static.website_endpoint
+    zone_id                = aws_s3_bucket.static.hosted_zone_id
+    evaluate_target_health = true
+  }
+}
