@@ -1,9 +1,9 @@
 variable "bucketName" {
-  default = "robofarming.link"
+  default = "demo.robofarming.link"
   type    = string
 }
 
 variable "domainName" {
-  default = "robofarming.link"
+  default = "demo.robofarming.link"
   type    = string
 }
