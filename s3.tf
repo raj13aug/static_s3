@@ -30,6 +30,7 @@ resource "aws_route53_record" "domainName" {
   zone_id = data.aws_route53_zone.selected.zone_id
   name    = var.domainName
   type    = "A"
+  ttl     = "300"
   alias {
     name                   = aws_s3_bucket.static.website_endpoint
     zone_id                = aws_s3_bucket.static.hosted_zone_id
