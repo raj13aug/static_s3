@@ -23,7 +23,7 @@ resource "aws_s3_object" "object-index" {
 
 
 data "aws_route53_zone" "selected" {
-  name = var.domainName
+  name = "robofarming.link"
 }
 
 resource "aws_route53_record" "domainName" {
