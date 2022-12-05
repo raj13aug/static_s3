@@ -34,6 +34,5 @@ resource "aws_route53_record" "domainName" {
     name                   = aws_s3_bucket.static.website_endpoint
     zone_id                = aws_s3_bucket.static.hosted_zone_id
     evaluate_target_health = true
-    ttl                    = "300"
   }
 }
