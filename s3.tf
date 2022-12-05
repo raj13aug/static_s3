@@ -33,6 +33,17 @@ resource "aws_route53_record" "domainName" {
   alias {
     name                   = aws_s3_bucket.static.website_endpoint
     zone_id                = aws_s3_bucket.static.hosted_zone_id
-    evaluate_target_health = true
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "www-domainName" {
+  zone_id = data.aws_route53_zone.selected.zone_id
+  name    = "www.${var.domainName}"
+  type    = "A"
+  alias {
+    name                   = aws_s3_bucket.static.website_endpoint
+    zone_id                = aws_s3_bucket.static.hosted_zone_id
+    evaluate_target_health = false
   }
 }
